@@ -21,7 +21,9 @@ def home():
 def predict():
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
-    return render_template('index.html', prediction_text = f'final__{final_features}')
+    
+    legitimacy = model.predict(final_features).round(0)
+    return render_template('index.html', prediction_text = f'final__{legitimacy}')
 
 if __name__ == '__main__':
     app.run()
