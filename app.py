@@ -23,7 +23,11 @@ def predict():
     final_features = [np.array(int_features)]
     
     legitimacy = model.predict(final_features).round(0)
-    return render_template('index.html', prediction_text = f'final__{legitimacy}')
+    if legitimacy[0] == 0:
+        output = 'The file is illegitimate'
+    else:
+        output = 'The file is legitimate'
+    return render_template('index.html', prediction_text = output)
 
 if __name__ == '__main__':
     app.run()
