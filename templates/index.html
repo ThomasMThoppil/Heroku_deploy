@@ -13,13 +13,22 @@
 
 <body>
  <div class="login">
-	<h1>Predict Salary Analysis</h1>
+	<h1>Malware Detection System</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="experience" placeholder="Experience" required="required" />
-        <input type="text" name="test_score" placeholder="Test Score" required="required" />
-		<input type="text" name="interview_score" placeholder="Interview Score" required="required" />
+    	<input type="text" name="Characteristics" placeholder="Characteristics" required="required" />
+        <input type="text" name="BaseOfData" placeholder="BaseOfData" required="required" />
+		<input type="text" name="CheckSum" placeholder="CheckSum" required="required" />
+	<input type="text" name="DllCharacteristics" placeholder="DllCharacteristics" required="required" />
+        <input type="text" name="MajorImageVersion" placeholder="MajorImageVersion" required="required" />
+		<input type="text" name="SizeOfInitializedData" placeholder="SizeOfInitializedData" required="required" />
+
+	<input type="text" name="AddressOfEntryPoint" placeholder="AddressOfEntryPoint" required="required" />
+        <input type="text" name="ImageBase" placeholder="ImageBase" required="required" />
+		<input type="text" name="SectionsMinVirtualsize" placeholder="SectionsMinVirtualsize" required="required" />
+
+	<input type="text" name="ResourcesMaxSize" placeholder="ResourcesMaxSize" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
